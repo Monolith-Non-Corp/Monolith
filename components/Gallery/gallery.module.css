@@ -1,0 +1,43 @@
+@layer components {
+    .container {
+        @apply min-h-screen relative tracking-widest;
+        #pointer-events-none: 0;
+    }
+    
+    .title {
+        @apply text-5xl text-gray-200 font-semibold;
+    }
+    
+    .title::after {
+        @apply block w-96 h-1 bg-gray-400;
+        content: "";
+        margin: 13px auto 0;
+    }
+
+    .description {
+        @apply text-xl text-gray-300;
+    }
+
+    .shadow {
+        @apply w-full h-full absolute top-0;
+        -webkit-box-shadow: 10px 10px 0 0 #060102;
+        -moz-box-shadow: 10px 10px 0 0 #060102;
+        box-shadow: 10px 10px 0 0 #060102
+    }
+
+    ._grid {
+        @apply grid grid-cols-3 text-center;
+    }
+
+    ._grid p {
+        @apply p-1 transform hover:scale-125 transition-transform;
+    }
+
+    ._grid div::after {
+        @apply block bg-black;
+        margin: 10px auto 0;
+        height: 1px;
+        width: 80%;
+        content: "";
+    }
+}

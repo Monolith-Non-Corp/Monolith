@@ -1,0 +1,54 @@
+@layer base {
+    .index {
+        @apply h-full flex md:flex-row flex-col justify-center items-center;
+        @apply xl:p-32 p-8;
+    }
+}
+
+@layer components {
+    .left {
+        @apply flex-1 xl:m-64 lg:m-32 md:m-16 m-8;
+        @apply xl:mb-64 lg:mb-32 md:mb-16 sm:mb-1 mb-0;
+        @apply md:mr-12;
+    }
+    
+    .right {
+        @apply flex-1 xl:m-64 lg:m-32 md:m-16 sm:m-8 m-0;
+        @apply xl:mt-64 lg:mt-32 md:mt-16 sm:mt-1 mt-0;
+        @apply md:ml-12;
+    }
+
+    .github {
+        @apply absolute bottom-0 right-0 m-4;
+    }
+
+    .github svg {
+        @apply inline-block;
+    }
+
+    .scroll {
+        @apply absolute bottom-0 w-14 h-10 mb-0 left-1/2 hover:opacity-50 transform -translate-x-7;
+        @apply animation-scroll;
+    }
+
+    .scroll polygon {
+        @apply fill-current text-yellow-500;
+    }
+}
+
+@layer utilities {
+    .animation-scroll {
+        animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+          transform: translateY(-25%) translateX(-1.75em);
+          animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+          transform: translateY(0) translateX(-1.75em);
+          animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
+}
