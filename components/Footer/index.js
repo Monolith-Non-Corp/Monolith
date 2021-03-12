@@ -1,15 +1,32 @@
+import Slide from 'react-reveal/Slide';
+
 import Button from '../Util/button'
 
 export default function Footer() {
-
     return (
         <div id='footer' className='tracking-widest relative'>
             <div className='h-96 bg-gray-200 flex flex-col place-content-center place-items-center gap-y-4 text-center'>
-                <div className='text-5xl text-gray-800 font-semibold'>Elevate your Developer Techniques</div>
-                <div className='text-xl text-gray-600'>Watch a random informative video.</div>
+                <div className='text-5xl text-gray-800 font-semibold'>
+                    <Slide down>
+                        <p>
+                            Elevate your Developer Techniques
+                        </p>
+                    </Slide>
+                </div>
+                <div className='text-xl text-gray-600'>
+                    <Slide down>
+                        <p>
+                            Watch a random informative video.
+                        </p>
+                    </Slide>
+                </div>
                 <div className='flex flex-row gap-x-10'>
-                    <Button content='Take on me' href='https://www.youtube.com/watch?v=djV11Xbc914' />
-                    <Button content='Take me on' href='https://www.youtube.com/watch?v=djV11Xbc914' />
+                    <Slide left>
+                        <Button content='Take on me' href='https://www.youtube.com/watch?v=djV11Xbc914' />
+                    </Slide>
+                    <Slide right>
+                        <Button content='Take me on' href='https://www.youtube.com/watch?v=djV11Xbc914' />
+                    </Slide>
                 </div>
             </div>
             <div className='h-64 bg-gray-800 text-gray-400 text-sm flex flex-row place-content-center'>
