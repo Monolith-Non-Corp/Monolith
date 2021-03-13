@@ -35,7 +35,7 @@ function LetterReveal({ word }) {
     const hide = useCallback(() => {
         setTimeout(() => {
             setLetters(states[letters.length - 1])
-        }, 80)
+        }, 50)
     }, [letters, letters.length])
 
     const enter = () => {

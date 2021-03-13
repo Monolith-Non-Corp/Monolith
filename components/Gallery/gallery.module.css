@@ -1,7 +1,6 @@
 @layer components {
     .container {
         @apply min-h-screen relative tracking-widest;
-        #pointer-events-none: 0;
     }
     
     .title {
