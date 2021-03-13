@@ -6,7 +6,7 @@ import Button from '../Util/button'
 
 function ItemContent({ content }) {
     return (
-        <div className={`flex-1 p-5 md:block hidden`}>
+        <div className='flex-1 p-5 md:block hidden bg-white bg-opacity-90'>
             <pre className='whitespace-pre-line font-sans'>
                 {content}
             </pre>
@@ -16,7 +16,7 @@ function ItemContent({ content }) {
 
 function ItemAbout({ name, repository, url, tech }) {
     return (
-        <div className={`flex flex-col flex-none border-l-2 border-r-2 border-gray-300`}>
+        <div className='flex flex-col flex-none border-l-2 border-r-2 border-gray-300 bg-white bg-opacity-90'>
             <div className='flex-1 p-5'>
                 <div className={styles._grid}>
                     {tech.map((x, index) => (
@@ -58,7 +58,7 @@ function Item({ data, side }) {
         <a href={repository} className={`xl:transform ${left ? 'xl:-translate-x-1/4' : 'xl:translate-x-1/4'}`}>
             <div ref={ref} className={`transition duration-500 ease-out w-full h-full p-5`} onMouseMove={enter} onMouseLeave={leave}>
                 <Fade left={left} right={!left}>
-                    <div className={`w-full h-full flex md:flex-row flex-col shadow-lg bg-white bg-opacity-90 text-black text-base ${left ? 'md:text-right' : 'md:text-left'}`}>
+                    <div className={`w-full h-full flex md:flex-row flex-col shadow-lg text-black text-base ${left ? 'md:text-right' : 'md:text-left'}`}>
                         {left
                             ? (<>{CONTENT}{ABOUT}</>)
                             : (<>{ABOUT}{CONTENT}</>)
