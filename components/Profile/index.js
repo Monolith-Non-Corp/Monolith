@@ -35,7 +35,7 @@ function LetterReveal({ word }) {
     const hide = useCallback(() => {
         setTimeout(() => {
             setLetters(states[letters.length - 1])
-        }, 100)
+        }, 80)
     }, [letters, letters.length])
 
     const enter = () => {
@@ -48,7 +48,7 @@ function LetterReveal({ word }) {
 
     return (
         <span onMouseEnter={enter} onMouseLeave={leave}>
-            {word[0]}{''}<span className='opacity-50 text-4xl'>{letters}</span>
+            <span className='opacity-70'>{word[0]}</span>{''}<span className='opacity-60 text-4xl'>{letters}</span>
         </span>
     )
 }
@@ -68,10 +68,10 @@ export default () => (
                 <Parallax y={[30, -30]}>
                     <div className='flex flex-col space-y-2'>
                         <Fade top>
-                            <p className='flex-none md:text-6xl text-4xl tracking-widest'>
-                                <LetterReveal word='Edgar' />{' '}
-                                <LetterReveal word='Alejandro' />{' '}
-                                <LetterReveal word='Garcia' />{' '}
+                            <p className='flex-none md:text-8xl text-6xl tracking-widest grid grid-flow-col'>
+                                <LetterReveal word='Edgar' />
+                                <LetterReveal word='Alejandro' />
+                                <LetterReveal word='Garcia' />
                                 <LetterReveal word='Castrejon' />
                             </p>
                         </Fade>
