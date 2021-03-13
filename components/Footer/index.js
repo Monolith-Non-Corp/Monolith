@@ -1,8 +1,38 @@
+import { useState, useCallback, useEffect } from 'react';
 import Slide from 'react-reveal/Slide';
 
 import Button from '../Util/button'
+import data from './data'
+
+function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+function useLink() {
+    const [link, setLink] = useState('')
+    const randomize = useCallback(() => {
+        setLink(data[getRandomArbitrary(0, data.length - 1)])
+        console.log(data[getRandomArbitrary(0, data.length - 1)])
+    }, [link, setLink])
+    const openLink = useCallback((e) => {
+        e.preventDefault()
+        window.open(link, '_blank', 'noopener,noreferrer')
+        randomize()
+    }, [link, randomize])
+
+    return {
+        link,
+        randomize,
+        openLink
+    }
+}
 
 export default function Footer() {
+    const { link, openLink, randomize } = useLink()
+    useEffect(() => {
+        randomize()
+    }, [randomize])
+
     return (
         <div id='footer' className='tracking-widest relative'>
             <div className='h-96 bg-gray-200 flex flex-col place-content-center place-items-center gap-y-4 text-center'>
@@ -22,10 +52,10 @@ export default function Footer() {
                 </div>
                 <div className='flex flex-row gap-x-10'>
                     <Slide left>
-                        <Button content='Take on me' href='https://www.youtube.com/watch?v=djV11Xbc914' />
+                        <Button content='Take on me' href={link} onClick={openLink} />
                     </Slide>
                     <Slide right>
-                        <Button content='Take me on' href='https://www.youtube.com/watch?v=djV11Xbc914' />
+                        <Button content='Take me on' href={link} onClick={openLink} />
                     </Slide>
                 </div>
             </div>
