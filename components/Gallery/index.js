@@ -30,7 +30,7 @@ function ItemAbout({ name, repository, url, tech }) {
                 <a className='block text-xl' style={{ fontWeight: '600' }}>
                     {name}
                 </a>
-                <a className='block text-base underline'>
+                <a className='block text-base hover:underline'>
                     {repository}
                 </a>
             </div>
